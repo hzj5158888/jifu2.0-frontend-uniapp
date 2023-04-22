@@ -108,15 +108,21 @@ const app = getApp();
 			},
 			goUrl:function(url){
 				let is_member = wx.getStorageSync("is_member");
+                let member_status = wx.getStorageSync("member_status")
 				let user_id = app.globalData.user_id
 				if(user_id == null || user_id === ''){
 					utils.showErrorToast("请先登录")
 					return;
 				}
 				
-				if(is_member != 1 && url === '../employee/index'){
-					utils.showErrorToast("没有相关权限")
-					return;
+                if(url === '../employee/index'){
+                    if (is_member != 1)
+					    url = '../employee/signup'
+                    else if (is_member == 1 && member_status != 1)
+                    {
+                        utils.showErrorToast("等待审核通过")
+                        return;
+                    }
 				}
 				
 				
@@ -140,6 +146,8 @@ const app = getApp();
 					  wx.setStorageSync('access_token', res.data.access_token);
 					  wx.setStorageSync('refresh_token', res.data.refresh_token);
 					  wx.setStorageSync('is_member', res.data.is_member);
+                      wx.setStorageSync("member_id",res.data.member_id);
+                      wx.setStorageSync("member_status", res.data.member_status);
 					  wx.setStorageSync("member_id",res.data.member_id);
 					  app.globalData.user_id = res.data.user_id;
 					  app.globalData.isLogin = true;
@@ -198,7 +206,7 @@ const app = getApp();
 		display: flex;
 		line-height: 125rpx;
 	}
-    
+
 	.login-btn{
 		margin:0 auto;
 		margin-top: 60rpx;

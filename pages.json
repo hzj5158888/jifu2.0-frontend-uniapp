@@ -133,6 +133,14 @@
                "enablePullDownRefresh": true
            }
         }
+        ,{
+            "path" : "pages/employee/signup",
+           "style" :
+           {
+               "navigationBarTitleText": "职员认证",
+               "enablePullDownRefresh": false
+           }
+        }
     ],
 	"tabBar": {
 		"color": "#7A7E83",
