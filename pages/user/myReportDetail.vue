@@ -102,7 +102,7 @@
 		<!--评分展示end-->
 
 		<view class="edit margin-top" v-if="reportDetail.status == 0 || reportDetail.status == 1">
-			<view class="flex flex-direction padding btn-container"><button class="cu-btn round lg padding bg-blue" @tap="cancelReport">撤销保障</button></view>
+			<view class="flex flex-direction padding btn-container"><button class="cu-btn round lg padding bg-blue" @tap="cancelReport">撤销报障</button></view>
 		</view>
 		<view class="edit margin-top" v-if="reportDetail.status == 3 && reportDetail.evaluate == -1">
 			<view class="flex flex-direction padding btn-container"><button class="cu-btn round lg padding bg-blue" @tap="showModal">服务评价</button></view>

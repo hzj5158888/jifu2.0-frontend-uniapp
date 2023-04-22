@@ -34,8 +34,8 @@
 				<!--长度为0-->
 				<view class="img-container text-center text-gray" v-else >
 					<image src="../../static/images/noform.png" class="noImg"></image>
-					<view v-if="status>-1">暂无{{title[TabCur]}}的保障</view>
-					<view v-else>暂无保障</view>	
+					<view v-if="status>-1">暂无{{title[TabCur]}}的报障</view>
+					<view v-else>暂无报障</view>	
 				</view>
 			</view>
 		</view>
@@ -51,7 +51,7 @@ export default {
 		return {
 			TabCur: 0,
 			scrollLeft: 0,
-			title: ['全部', '待确认', '待处理', '已处理', '已完成', '无法处理', '已撤销'],
+			title: ['全部', '待确认', '已接收', '已处理', '已完成', '无法处理', '已撤销'],
 			user_id: '',
 			reportlist: [],
 			status: -1,
