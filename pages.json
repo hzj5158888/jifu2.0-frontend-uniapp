@@ -142,6 +142,14 @@
            }
         }
         ,{
+            "path" : "pages/employee/infoModify",
+           "style" :
+           {
+               "navigationBarTitleText": "我的",
+               "enablePullDownRefresh": false
+           }
+        }
+        ,{
             "path" : "pages/admin/index",
            "style" :
            {

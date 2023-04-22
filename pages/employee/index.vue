@@ -28,6 +28,12 @@
 					<text class="text-grey">效绩记录</text>
 				</view>						
 			</view>	
+            <view class="cu-item" @click="goUrl('../employee/infoModify')">				
+				<view class="content">
+					<text class="cuIcon-people text-blue"></text>
+					<text class="text-grey">我的</text>
+				</view>						
+			</view>
 		</view>
 		
 
@@ -47,22 +53,25 @@
 		},
 		methods: {
 			goUrl:function(url){
-				
-					if(this.memberInfo.is_tenure === false){
-						if(url=="../employee/getTask"){
-							utils.showErrorToast("非任职人员无相关权限")
-							return;
-						}else{
-							utils.navigete(url)
-							return;
-						}
-					}else{
-						utils.navigete(url)
+				if(this.memberInfo.is_tenure === false){
+					if(url=="../employee/getTask"){
+						utils.showErrorToast("非任职人员无相关权限")
+						return;
 					}
-							
+				}
+
+                if (url == '../employee/infoModify')
+                {
+                    this.memberInfo.member_id = this.member_id
+                    let memberInfo_pass = encodeURIComponent(JSON.stringify(this.memberInfo))
+                    utils.navigete('infoModify?memberInfo=' + memberInfo_pass)
+                }
+					
+                utils.navigete(url)
 			},
 			getMemberInfo:function(){
-				utils.request(api.member+ this.member_id +'/info',{},"GET").then(res=>{
+				utils.request(api.member+ this.member_id +'/info',
+                                {},"GET").then(res=>{
 					if(res){
 						this.memberInfo = res;
                         if (res.campus == '测试' || res.campus == '大学城校区')
@@ -76,7 +85,13 @@
 		onLoad(){
 			this.member_id = wx.getStorageSync("member_id");
 			this.getMemberInfo();
-		}
+		},
+        onShow(options) {
+            if (typeof options == 'undefined' || options.refresh != 1)
+                return;
+        
+            this.getMemberInfo();
+        }
 	}
 </script>
 
