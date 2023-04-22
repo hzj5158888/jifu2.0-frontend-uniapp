@@ -110,6 +110,8 @@ const app = getApp();
 		methods: {
 			logOut:function(){
 				this.flag = app.globalData.isLogin = false;
+                app.globalData.user_id = "";
+                wx.setStorageSync("user_id", "");
 				wx.setStorageSync("access_token","");
 				let that = this;
 				utils.wxLogin().then(res=>{
