@@ -1,6 +1,6 @@
 {
     "name" : "jf-wxminiprogram",
-    "appid" : "__UNI__A446ADD",
+    "appid" : "__UNI__B8BAEDE",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -57,7 +57,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wxb19cb690caafbecc",
+        "appid" : "wx47ba45eb2ae16858",
         "setting" : {
             "urlCheck" : false,
             "es6" : true

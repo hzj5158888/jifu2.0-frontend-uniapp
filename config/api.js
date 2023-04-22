@@ -1,8 +1,8 @@
 //生产环境
-const API_BASE_URL = 'https://api.gdpujf.com/'; 
+//const API_BASE_URL = 'https://api.gdpujf.com/'; 
 
 //开发环境
-//const API_BASE_URL = 'http://127.0.0.1:5000/';
+const API_BASE_URL = 'https://e0e39b7.r2.cpolar.cn/';
 module.exports = {
 	//首页相关
 	getCarousels : API_BASE_URL + 'campus/', //获取校区轮播图
