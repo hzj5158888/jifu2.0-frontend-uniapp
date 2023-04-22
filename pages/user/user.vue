@@ -87,6 +87,12 @@ const app = getApp();
 			
 			
 		},
+        onPullDownRefresh(){
+            this.updateMemberinfo()
+            setTimeout(function () {
+			    uni.stopPullDownRefresh();
+		    }, 300);
+        },
 		onReady(){
 			
 		},
@@ -176,6 +182,24 @@ const app = getApp();
 					utils.showErrorToast("取消了授权")
 				}
 			},
+            updateMemberinfo: function() {
+                let user_id = wx.getStorageSync('user_id')
+                if(user_id == null || user_id === ''){
+					utils.showErrorToast("请先登录")
+					return;
+				}
+
+                let is_member = wx.getStorageSync('is_member')
+                if (is_member != 1)
+                    return;
+
+                let member_id = wx.getStorageSync('member_id')
+                utils.request(api.member + member_id + '/info', 
+                {}, 'GET', 'application/json').then(res => {
+                    wx.setStorageSync("member_status", res.status)
+                    wx.setStorageSync("is_admin", res.is_admin)
+                })
+            },
             onChooseAvatar: function(e) {
                 this.avatarUrl = e.detail.avatarUrl
             }
