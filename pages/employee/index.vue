@@ -2,7 +2,7 @@
 	<view>
 		<view class="head text-white text-xl">
 			<view class="info_container padding-top">
-				<view class="userInfo ">欢迎你,{{memberInfo.dept}}{{memberInfo.position}} {{memberInfo.name}}</view>
+				<view class="userInfo ">欢迎你, {{memberInfo.dept}}{{memberInfo.position}} {{memberInfo.name}}</view>
 				<view class="userInfo  margin-top"> {{memberInfo.campus}}</view>		
 				<view class="userInfo margin-top ">效绩值:{{memberInfo.merits}}</view>
 				<view class="userInfo status text-green margin-top" v-if="memberInfo.is_tenure == true">●任职期间</view>
