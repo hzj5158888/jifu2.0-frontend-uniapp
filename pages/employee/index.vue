@@ -65,7 +65,10 @@
 				utils.request(api.member+ this.member_id +'/info',{},"GET").then(res=>{
 					if(res){
 						this.memberInfo = res;
-						app.globalData.member_campusId = res.campus == '大学城校区'? 1:2;
+                        if (res.campus == '测试' || res.campus == '大学城校区')
+                            app.globalData.member_campusId = 1;
+                        else
+                            app.globalData.member_campusId = 2;
 					}
 				})
 			}
