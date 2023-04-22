@@ -63,7 +63,7 @@
 		</view>
 
         <view class="edit margin-top">
-			<view class="flex flex-direction padding btn-container"><button class="cu-btn round lg padding bg-blue" @tap="passMember">资料修改</button></view>
+			<view class="flex flex-direction padding btn-container"><button class="cu-btn round lg padding bg-blue" @tap="modifyInfo">资料修改</button></view>
 		</view>
 	</view>
 </template>
@@ -82,6 +82,11 @@ export default {
 		};
 	},
 	methods: {
+        modifyInfo: function() {
+            this.memberDetail.member_id = this.member_id
+            let memberDetail_pass = encodeURIComponent(JSON.stringify(this.memberDetail))
+            utils.navigete('memberDetailModify?memberDetail=' + memberDetail_pass)
+        },
 		passMember: function(){
             utils.request(api.admin + 'member/info/modify/' + this.member_id, 
             {status : 1}, 'PUT', 'application/json').then(res => {
@@ -107,7 +112,13 @@ export default {
 		this.user_id = app.globalData.user_id;
 		this.member_id = options.id;
 		this.getMembeDetail();
-	}
+	},
+    onShow(options) {
+        if (typeof options == 'undefined' || options.refresh != 1)
+            return;
+        
+        this.getMembeDetail();
+    }
 };
 </script>
 

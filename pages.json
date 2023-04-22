@@ -179,6 +179,14 @@
 		   }
 		}
         ,{
+		    "path" : "pages/admin/memberDetailModify",
+		   "style": {
+		   	"navigationBarTitleText": "资料修改",
+			"navigationBarBackgroundColor": "#0080FF",
+			 "navigationBarTextStyle": "white"
+		   }
+		}
+        ,{
 		    "path" : "pages/admin/memberInviteCode",
 		   "style": {
 		   	"navigationBarTitleText": "职员邀请码",
