@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 2177180 */
+  src: url('https://at.alicdn.com/t/font_2177180_az9b4yt693h.eot');
+  src: url('https://at.alicdn.com/t/font_2177180_az9b4yt693h.eot?#iefix') format('embedded-opentype'),
+  url('https://at.alicdn.com/t/font_2177180_az9b4yt693h.woff2') format('woff2'),
+  url('https://at.alicdn.com/t/font_2177180_az9b4yt693h.woff') format('woff'),
+  url('https://at.alicdn.com/t/font_2177180_az9b4yt693h.ttf') format('truetype'),
+  url('https://at.alicdn.com/t/font_2177180_az9b4yt693h.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconcompass:before {
+  content: "\e77d";
+}
+
+.iconmessage:before {
+  content: "\e78a";
+}
+
+.iconuser:before {
+  content: "\e7ae";
+}
+
+.iconinstagram:before {
+  content: "\e87f";
+}
+

@@ -1,0 +1,170 @@
+{
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "igdpujf",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/more/more",
+			"style": {
+				"navigationBarTitleText": "更多功能",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/knowledge/knowledge",
+			"style": {
+				"navigationBarTitleText": "精彩文章",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"enablePullDownRefresh": false
+			}
+			
+		},
+		{
+			"path": "pages/report/studentReport",
+			"style": {
+				"navigationBarTitleText": "学生报障",
+				"enablePullDownRefresh": false
+			}
+		}
+	    ,{
+            "path" : "pages/report/teacherReport",
+           "style": {
+           	"navigationBarTitleText": "教师报障",
+           	"enablePullDownRefresh": false
+           }
+        },
+		{
+		    "path" : "pages/user/myReport",
+		   "style": {
+		   	"navigationBarTitleText": "我的报障",
+		   	"enablePullDownRefresh": false
+		   }
+		},
+		{
+		    "path" : "pages/employee/index",
+		   "style": {
+		   	"navigationBarTitleText": "后台管理",
+		   	"enablePullDownRefresh": false,
+			"navigationBarBackgroundColor": "#0080FF",
+			 "navigationBarTextStyle": "white"
+		   }
+		},
+		{
+		    "path" : "pages/employee/getTask",
+		   "style": {
+		   	"navigationBarTitleText": "领取任务",
+		   	"enablePullDownRefresh": false,
+			"navigationBarBackgroundColor": "#0080FF",
+			 "navigationBarTextStyle": "white"
+		   }
+		},
+		{
+		    "path" : "pages/employee/reportDetail",
+		   "style": {
+		   	"navigationBarTitleText": "故障详情",
+		   	"enablePullDownRefresh": false,
+			"navigationBarBackgroundColor": "#0080FF",
+			 "navigationBarTextStyle": "white"
+		   }
+		},
+		{
+		    "path" : "pages/employee/myTask",
+		   "style": {
+		   	"navigationBarTitleText": "已接任务",
+		   	"enablePullDownRefresh": false,
+			"navigationBarBackgroundColor": "#0080FF",
+			 "navigationBarTextStyle": "white"
+		   }
+		}
+        ,{
+            "path" : "pages/user/myReportDetail",
+            "style" : {
+					"navigationBarTitleText": "我的报障详情"
+			}
+        }
+        ,{
+            "path" : "pages/knowledge/web",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "浏览文章",
+                "enablePullDownRefresh": true
+            }
+            
+        }
+        ,{
+            "path" : "pages/employee/myMerits",
+            "style" :
+            {
+                "navigationBarTitleText": "我的效绩",
+                "enablePullDownRefresh": true
+            }
+        }
+        ,{
+            "path" : "pages/employee/changeNote",
+            "style" :
+            {
+                "navigationBarTitleText": "修改备注",
+                "enablePullDownRefresh": true
+            }
+        }
+        ,{
+            "path" : "pages/user/feedBack",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/employee/EditReason",
+           "style" :
+           {
+               "navigationBarTitleText": "填写无法处理原因",
+               "enablePullDownRefresh": true
+           }
+        }
+    ],
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#0080ff",
+		"borderStyle": "white",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tab/home.png",
+				"selectedIconPath": "static/tab/home-fill.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/more/more",
+				"iconPath": "static/tab/compass.png",
+				"selectedIconPath": "static/tab/compass-fill.png",
+				"text": "更多功能"
+			},
+			// {
+			// 	"pagePath": "pages/knowledge/knowledge",
+			// 	"iconPath": "static/tab/article.png",
+			// 	"selectedIconPath": "static/tab/article-fill.png",
+			// 	"text": "文章"
+			// },
+			{
+				"pagePath": "pages/user/user",
+				"iconPath": "static/tab/user.png",
+				"selectedIconPath": "static/tab/user-fill.png",
+				"text": "个人中心"
+			}
+		]
+	},
+	"enablePullDownRefresh": true
+
+}
