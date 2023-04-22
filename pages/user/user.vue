@@ -40,6 +40,12 @@
 						<text class="text-grey">职员入口</text>
 					</view>						
 				</view>
+                <view class="cu-item" @click="goUrl('../admin/index')">				
+					<view class="content">
+						<text class="cuIcon-group text-blue"></text>
+						<text class="text-grey">管理员入口</text>
+					</view>						
+				</view>
 				<view class="cu-item" @click="logOut()">
 					<view class="content">
 						<text class="cuIcon-exit text-blue"></text>
@@ -124,6 +130,16 @@ const app = getApp();
                         return;
                     }
 				}
+
+                if (url === '../admin/index'){
+                    if (is_admin != 1 && is_member == 1)
+                        url = '../admin/signup'
+                    else if (is_member !== 1)
+                    {
+                        utils.showErrorToast("无访问权限")
+                        return;
+                    }
+                }
 				
 				
 					wx.navigateTo({
@@ -149,6 +165,7 @@ const app = getApp();
                       wx.setStorageSync("member_id",res.data.member_id);
                       wx.setStorageSync("member_status", res.data.member_status);
 					  wx.setStorageSync("member_id",res.data.member_id);
+                      wx.setStorageSync("is_admin", res.data.is_admin)
 					  app.globalData.user_id = res.data.user_id;
 					  app.globalData.isLogin = true;
 					  app.globalData.member_id = res.data.member_id;
