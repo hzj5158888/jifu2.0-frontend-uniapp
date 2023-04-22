@@ -80,6 +80,7 @@
 					    imgList: [],
 						uploadImg:[],
 						user_id:"",
+                        campus_id:"",
 						canvasWidth:0,
 						canvasHeight:0
 			}			
