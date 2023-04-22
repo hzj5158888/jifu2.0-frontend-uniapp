@@ -141,6 +141,61 @@
                "enablePullDownRefresh": false
            }
         }
+        ,{
+            "path" : "pages/admin/index",
+           "style" :
+           {
+               "navigationBarTitleText": "管理员后台管理",
+               "enablePullDownRefresh": false,
+			   "navigationBarBackgroundColor": "#0080FF",
+			   "navigationBarTextStyle": "white"
+           }
+        }
+        ,{
+            "path" : "pages/admin/signup",
+           "style" :
+           {
+               "navigationBarTitleText": "管理员认证",
+               "enablePullDownRefresh": false
+           }
+        }
+        ,{
+            "path" : "pages/admin/memberManager",
+           "style" :
+           {
+               "navigationBarTitleText": "职员列表",
+               "enablePullDownRefresh": true,
+			   "navigationBarBackgroundColor": "#0080FF",
+			   "navigationBarTextStyle": "white"
+           }
+        }
+        ,{
+		    "path" : "pages/admin/memberDetail",
+		   "style": {
+		   	    "navigationBarTitleText": "职员详情",
+		   	    "enablePullDownRefresh": false,
+			    "navigationBarBackgroundColor": "#0080FF",
+			    "navigationBarTextStyle": "white"
+		   }
+		}
+        ,{
+		    "path" : "pages/admin/memberInviteCode",
+		   "style": {
+		   	"navigationBarTitleText": "职员邀请码",
+		   	"enablePullDownRefresh": false,
+			"navigationBarBackgroundColor": "#0080FF",
+			 "navigationBarTextStyle": "white"
+		   }
+		}
+        ,{
+		    "path" : "pages/admin/adminInviteCode",
+		   "style": {
+		   	"navigationBarTitleText": "管理员邀请码",
+		   	"enablePullDownRefresh": true,
+			"navigationBarBackgroundColor": "#0080FF",
+			 "navigationBarTextStyle": "white"
+		   }
+		}
     ],
 	"tabBar": {
 		"color": "#7A7E83",
