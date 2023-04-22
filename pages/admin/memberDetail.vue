@@ -109,6 +109,10 @@ export default {
             utils.request(api.admin + 'member/del/' + this.member_id, 
             {}, 'PUT', 'application/json').then(res => {
 				if (res.code == 200) {
+                    var pages = getCurrentPages()
+                    var prevpage = pages[pages.length - 2]
+                    prevpage.onShow({'refresh': 1});
+                    
 					wx.navigateBack({
                         delta: 1,
                     })

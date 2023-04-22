@@ -65,12 +65,15 @@ import { unionTypeAnnotation } from '@babel/types';
             } 
 			this.admin_memberid = wx.getStorageSync('member_id')
 		},
-		onShow(){
+		onShow(options){
             if (app.globalData.isLogin == false)
             {
                 utils.toLogin()
                 return;
-            } 
+            }
+            if (typeof options == 'undefined' || options.refresh != 1)
+                return;
+            
 			this.getMembers();
 		},
 		onPullDownRefresh() {
