@@ -101,6 +101,9 @@
 		},
 		onPullDownRefresh() {
 			this.getMytask();
+            setTimeout(function () {
+                uni.stopPullDownRefresh();
+            }, 300);
 		}
 	
 	}

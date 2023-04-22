@@ -64,6 +64,9 @@
 		},
 		onPullDownRefresh() {
 			this.getMyMeritsLogs();
+            setTimeout(function () {
+                uni.stopPullDownRefresh();
+            }, 300);
 		},
 		onReachBottom() {
 			if(this.page_num<this.total_page)

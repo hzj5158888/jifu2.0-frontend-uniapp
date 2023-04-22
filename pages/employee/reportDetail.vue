@@ -434,6 +434,9 @@ export default {
 	},
 	onPullDownRefresh() {
 		this.getReportDetail();
+        setTimeout(function () {
+                uni.stopPullDownRefresh();
+        }, 300);
 	}
 };
 </script>

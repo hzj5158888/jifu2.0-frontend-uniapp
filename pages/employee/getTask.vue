@@ -77,6 +77,9 @@
 		},
 		onPullDownRefresh() {
 			this.getReports();
+            setTimeout(function () {
+                uni.stopPullDownRefresh();
+            }, 300);
 		}
 	}
 </script>
