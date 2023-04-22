@@ -62,7 +62,15 @@
 			<view class="flex flex-direction padding btn-container"><button class="cu-btn round lg padding bg-blue" @tap="passMember">通过审核</button></view>
 		</view>
 
-        <view class="edit margin-top">
+        <view class="edit margin-top" v-if="memberDetail.status == 0">
+			<view class="flex flex-direction padding btn-container"><button class="cu-btn round lg padding bg-blue" @tap="delMember">驳回申请</button></view>
+		</view>
+
+        <view class="edit margin-top" v-if="memberDetail.status == 1 && memberDetail.is_admin == 0">
+			<view class="flex flex-direction padding btn-container"><button class="cu-btn round lg padding bg-blue" @tap="delMember">删除成员</button></view>
+		</view>
+
+        <view class="edit margin-top" v-if="memberDetail.is_admin == 0">
 			<view class="flex flex-direction padding btn-container"><button class="cu-btn round lg padding bg-blue" @tap="modifyInfo">资料修改</button></view>
 		</view>
 	</view>
@@ -92,6 +100,18 @@ export default {
             {status : 1}, 'PUT', 'application/json').then(res => {
 				if (res.code == 200) {
 					this.memberDetail = res.data;
+                } else {
+                    utils.showErrorToast(res)
+                }
+			});
+        },
+        delMember: function(){
+            utils.request(api.admin + 'member/del/' + this.member_id, 
+            {}, 'PUT', 'application/json').then(res => {
+				if (res.code == 200) {
+					wx.navigateBack({
+                        delta: 1,
+                    })
                 } else {
                     utils.showErrorToast(res)
                 }

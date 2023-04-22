@@ -9,7 +9,7 @@
 			<view class="title">校区：</view>
 			<input :value= memberDetail.campus name="campus"></input>
 		</view>
-        <view class="cu-form-group" v-if="is_admin == 0">
+        <view class="cu-form-group">
 			<view class="title">部门：</view>
 			<input :value= memberDetail.dept name="dept"></input>
 		</view>
@@ -69,7 +69,7 @@ import { ColorCard } from '@icon-park/vue-next';
                         })
                         return;
 				   }
-                   if (is_admin == 0 && dpet_list.indexOf(dept_name) == -1) {
+                   if (dpet_list.indexOf(dept_name) == -1) {
                         wx.showToast({
                             title: '请输入正确的部门名(如：技术部)',
                             icon: 'none',
