@@ -116,7 +116,6 @@ import { ColorCard } from '@icon-park/vue-next';
                                     'application/json').then(res=>{
 					if (res.code == 200){
 						// utils.showSuccessToast(res.msg)
-                        wx.setStorageSync("member_status", res.data.member_status)
 						wx.showModal({
 							content:'修改成功',
 							showCancel:false,

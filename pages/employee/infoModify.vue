@@ -1,11 +1,11 @@
 <template>
 	<view>
 	<form  @submit="formSubmit">
-        <view class="cu-form-group">
+        <view class="cu-form-group" v-if="is_admin == 0">
 			<view class="title">校区：</view>
 			<input :value= memberInfo.campus name="campus"></input>
 		</view>
-        <view class="cu-form-group">
+        <view class="cu-form-group" v-if="is_admin == 0">
 			<view class="title">部门：</view>
 			<input :value= memberInfo.dept name="dept"></input>
 		</view>
