@@ -68,12 +68,17 @@
 			this.getMemberInfo();
 
 		},
-        onShow() {
+        onShow(options) {
             if (app.globalData.isLogin == false)
             {
                 utils.toLogin()
                 return;
             } 
+
+            if (typeof options == 'undefined' || options.refresh != 1)
+                return;
+            
+            this.getMemberInfo()
 	    },
 	}
 </script>

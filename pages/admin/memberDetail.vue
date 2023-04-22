@@ -118,6 +118,16 @@ export default {
             return;
         
         this.getMembeDetail();
+        if (this.memberDetail.name == '')
+        {
+            var pages = getCurrentPages()
+            var prevpage = pages[pages.length - 2]
+
+            prevpage.onShow({'refresh': 1});
+            wx.navigateBack({
+                delta: 1,
+            })
+        }
     }
 };
 </script>

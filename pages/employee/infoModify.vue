@@ -53,7 +53,7 @@
 				   var phone = e.detail.value.phone
                    var dept_name = e.detail.value.dept
        
-                   if (dpet_list.indexOf(dept_name) == -1) {
+                   if (is_admin == 0 && dpet_list.indexOf(dept_name) == -1) {
                         wx.showToast({
                             title: '请输入正确的部门名(如：技术部)',
                             icon: 'none',
@@ -61,7 +61,7 @@
                         })
                         return;
                    }
-                   if (campus_list.indexOf(campus_name) == -1) {
+                   if (is_admin == 0 && campus_list.indexOf(campus_name) == -1) {
                         wx.showToast({
                             title: '请输入正确的校区名(如：大学城校区)',
                             icon: 'none',
