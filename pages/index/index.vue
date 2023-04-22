@@ -72,6 +72,17 @@ export default {
 			this.area = '中山';
 		}
 		this.showMsg(this.area)
+
+        if(wx.getStorageSync("access_token")!=="" && wx.getStorageSync("is_member") == 1 && 
+           wx.getStorageSync('is_admin') != 1 && wx.getStorageSync("member_status") == 1){
+				app.globalData.isLogin = true;
+				app.globalData.member_id = wx.getStorageSync("member_id");
+				app.globalData.user_id = wx.getStorageSync("user_id");
+				this.flag = true;
+                wx.navigateTo({
+					url: '../employee/index'
+				})
+		}
 	},
 
 	methods: {
