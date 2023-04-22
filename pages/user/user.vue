@@ -1,9 +1,11 @@
 <template>
 	<view>		
 			<view class="user-header">
-				<view  v-if="flag " class="uerpic-container">
-						<open-data class="userAvatarUrl" lang="zh_CN" type="userAvatarUrl"></open-data>
-						<open-data  lang="zh_CN" type="userNickName"></open-data>
+				<view  v-if="flag " class="btn-container padding flex uerpic-container">
+                        <button class="cu-btn userAvatarBtn" open-type="chooseAvatar" @chooseavatar="onChooseAvatar" style="background-color: unset">
+                            <img class="userAvatarimg" :src="avatarUrl"/>
+                        </button> 
+                        <open-data  lang="zh_CN" type="userNickName"></open-data>
 				</view>
 				<view  v-else>
 					<view class="btn-container padding flex flex-wrap justify-between align-center bg-white">
@@ -55,6 +57,7 @@
 
 <script>
 
+const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
 const utils = require('../../utils/util.js')	
 const api = require('../../config/api.js')	
 const app = getApp();
@@ -64,7 +67,8 @@ const app = getApp();
 			return {
 				flag:false,
 				menuCard:true,
-				code:''
+				code:'',
+                avatarUrl : defaultAvatarUrl
 			};
 		},
 		onLoad() {
@@ -146,7 +150,10 @@ const app = getApp();
 				}else{
 					utils.showErrorToast("取消了授权")
 				}
-			}
+			},
+            onChooseAvatar: function(e) {
+                this.avatarUrl = e.detail.avatarUrl
+            }
 		},
 
 	}
@@ -165,15 +172,23 @@ const app = getApp();
 		background-color: white;
 	}
 	
-	.userAvatarUrl{
+	.userAvatarBtn{
 	  display: block;
-	  margin-right: 30rpx;
-	  width: 120rpx;
-	  height: 120rpx;
-	  border-radius: 50%;
-	  border: 5rpx solid #fff;
+	  margin-right: 15rpx;
+      height: 70px;
+      width: 100px;
+      border-radius: 50%;
 	  overflow: hidden;
 	}
+
+    .userAvatarimg{
+        display: flex;
+        margin-right: 30rpx;
+        height: 100%;
+        width: 100%;
+        border-radius: 100%;
+        overflow: hidden;
+    }
 	
 	.uerpic-container{
 		position: relative;
@@ -183,6 +198,7 @@ const app = getApp();
 		display: flex;
 		line-height: 125rpx;
 	}
+    
 	.login-btn{
 		margin:0 auto;
 		margin-top: 60rpx;
