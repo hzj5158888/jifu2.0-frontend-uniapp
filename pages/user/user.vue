@@ -121,6 +121,7 @@ const app = getApp();
 			goUrl:function(url){
 				let is_member = wx.getStorageSync("is_member");
                 let member_status = wx.getStorageSync("member_status")
+                let is_admin = wx.getStorageSync("is_admin")
 				let user_id = app.globalData.user_id
 				if(user_id == null || user_id === ''){
 					utils.showErrorToast("请先登录")
