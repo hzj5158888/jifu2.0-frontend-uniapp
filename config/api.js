@@ -23,5 +23,7 @@ module.exports = {
 	
 	//反馈
 	feedBack: API_BASE_URL + 'feedback/' ,
-	
+
+    //管理员
+    admin: API_BASE_URL + 'admin/',
 }
