@@ -61,6 +61,10 @@
 		<view class="edit margin-top" v-if="memberDetail.status == 0">
 			<view class="flex flex-direction padding btn-container"><button class="cu-btn round lg padding bg-blue" @tap="passMember">通过审核</button></view>
 		</view>
+
+        <view class="edit margin-top">
+			<view class="flex flex-direction padding btn-container"><button class="cu-btn round lg padding bg-blue" @tap="passMember">资料修改</button></view>
+		</view>
 	</view>
 </template>
 
@@ -82,7 +86,6 @@ export default {
             utils.request(api.admin + 'member/info/modify/' + this.member_id, 
             {status : 1}, 'PUT', 'application/json').then(res => {
 				if (res.code == 200) {
-                    console.log(res)
 					this.memberDetail = res.data;
                 } else {
                     utils.showErrorToast(res)
@@ -95,7 +98,7 @@ export default {
 				if (res.code == 200) {
 					this.memberDetail = res.data;
                 } else {
-                    console.log(res)
+                    utils.showErrorToast(res)
                 }
 			});
 		}
